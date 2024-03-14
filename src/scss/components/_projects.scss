@@ -1,0 +1,134 @@
+.projects {
+  padding-top: var(--offset-xl);
+  padding-bottom: var(--offset-xl);
+
+  &__header {
+    @include flex-all-sb;
+
+    margin-bottom: var(--offset-l);
+  }
+
+  &__controlls {
+    @include flex-all-sb;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include flex-all-center;
+
+    border: 2px solid var(--c-accent);
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    background-color: var(--c-accent);
+    transition: background-color var(--duration-medium), border-color var(--duration-medium), opacity var(--duration-medium);
+
+    svg {
+      display: block;
+      width: 60%;
+      height: auto;
+      fill: var(--c-white);
+      object-fit: cover;
+      transition: fill var(--duraton-medium);
+    }
+
+    &:first-child {
+      margin-right: var(--offset-s);
+    }
+
+    @include hover {
+      border-color: var(--c-accent);
+      background-color: var(--c-white);
+
+      svg {
+        fill: var(--c-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline-color: var(--c-accent-dark);
+    }
+
+    &:active {
+      opacity: var(--opacity);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+
+  .swiper {
+    margin: -20px !important;
+    padding: 20px !important;
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+    border-radius: var(--border-r-s);
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    will-change: transform;
+    cursor: grab;
+  }
+
+  .swiper-slide-visible {
+    opacity: 1;
+  }
+
+  &__scrollbar {
+    margin-top: var(--offset-l);
+    height: 10px;
+    max-width: 600px;
+
+    .swiper-scrollbar-drag {
+      width: 60%;
+      background-color: var(--c-accent);
+      cursor: grab;
+    }
+  }
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--offset-m);
+  height: 420px;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__tags {
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+
+    li {
+      border-radius: var(--border-r-xl);
+      padding: 10px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--c-blue);
+      background-color: var(--c-white);
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}

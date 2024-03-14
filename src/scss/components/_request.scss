@@ -1,0 +1,103 @@
+.request {
+  padding-bottom: var(--offset-xl);
+
+  &__container {
+    border-radius: var(--border-r-s);
+    background: url("../img/mixer.png"), var(--c-blue);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: var(--offset-xl) var(--offset-m);
+    gap: var(--gap);
+
+    @include small-tablet {
+      flex-direction: column;
+      padding: var(--offset-xl) 0;
+    }
+  }
+
+  &__col {
+    width: calc((100% - var(--gap)) / 2);
+
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: var(--c-white);
+  }
+
+  &__subtitle {
+    margin-bottom: var(--offset-m);
+    color: var(--c-white);
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: var(--offset-m);
+    max-width: 520px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--c-white);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    @include flex-v-center;
+
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--c-accent);
+    transition: color var(--duration-medium), opacity var(--duration-medium);
+
+    svg {
+      @include circle-icon(36px, 36px, var(--c-accent));
+
+      margin-right: var(--offset-s);
+      transition: fill var(--duration-medium);
+    }
+
+    @include hover {
+      color: var(--c-accent-dark);
+
+      svg {
+        fill: var(--c-accent-dark);
+      }
+    }
+
+    &:focus-visible {
+      outline-color: var(--c-accent-dark);
+    }
+
+    &:active {
+      opacity: var(--opacity);
+    }
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  .form legend {
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  .form__descr {
+    @include small-tablet {
+      display: none;
+    }
+  }
+}

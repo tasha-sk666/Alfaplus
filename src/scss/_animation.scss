@@ -1,0 +1,11 @@
+.header {
+  &.hide {
+    transform: translateY(-100%);
+  }
+}
+
+.scrolldown {
+  &__path {
+    animation: scrolldown-offset 2s infinite;
+  }
+}

@@ -1,0 +1,47 @@
+@import "mixins";
+
+:root {
+  // base
+  --font-family: "Montserrat", sans-serif;
+  --content-width: 1230px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // offsets
+  --offset-xl: 60px;
+  --offset-l: 40px;
+  --offset-m: 24px;
+  --offset-s: 15px;
+  --gap: 30px;
+  --border-r-xl: 50px;
+  --border-r-s: 12px;
+  --box-shadow: 0 0 20px 5px #969ea636;
+  --box-shadow-small: 0 0 10px 5px #969ea636;
+  --opacity: 0.8;
+  --zindex-header: 10;
+  --zindex-nav: 9;
+  --vh: 100vh;
+
+  // colors
+  --c-white: #fff;
+  --c-accent: #eb6425;
+  --c-accent-dark: #ce4500;
+  --c-almond: #ffebcd;
+  --c-blue: #3e3e59;
+  --c-grey-light: #f4f5f6;
+  --c-grey-dark: #5c5c73;
+  --c-dark: #1e212c;
+
+  // transition
+  --duration-short: 0.2s;
+  --duration-medium: 0.3s;
+}
+
+@include tablet {
+  :root {
+    --offset-xl: 40px;
+    --offset-l: 24px;
+    --offset-s: 10px;
+    --gap: 15px;
+  }
+}

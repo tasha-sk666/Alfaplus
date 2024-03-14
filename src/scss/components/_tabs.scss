@@ -1,0 +1,103 @@
+.tabs {
+  @include flex;
+
+  align-items: flex-start;
+  border-radius: var(--border-r-s);
+  padding: var(--offset-m);
+  background-color: var(--c-grey-light);
+  gap: var(--gap);
+
+  &__nav {
+    width: 30%;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 5px;
+    }
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__nav-btn {
+    border-radius: var(--border-r-s);
+    padding: var(--offset-s) var(--offset-m);
+    width: 100%;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: left;
+    color: var(--c-dark);
+    background-color: var(--c-white);
+    transition: color var(--duration-short), background-color var(--duration-short), box-shadow var(--duration-short), opacity var(--duration-short);
+
+    @include hover {
+      box-shadow: var(--box-shadow-small);
+      background-color: var(--c-white);
+    }
+
+    &:focus-visible {
+      outline-color: var(--c-accent-dark);
+    }
+
+    &:active {
+      opacity: var(--opacity);
+    }
+
+    &--active {
+      box-shadow: var(--box-shadow-small);
+      color: var(--c-white);
+      background-color: var(--c-accent);
+
+      @include hover {
+        background-color: var(--c-accent-dark);
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__wrapper {
+    @include flex-all-center;
+  }
+
+  &__panel {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-short);
+
+    &--active {
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include mobile {
+    padding: 0;
+    background-color: transparent;
+  }
+}

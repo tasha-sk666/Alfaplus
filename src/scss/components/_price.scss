@@ -1,0 +1,98 @@
+.price {
+  padding-top: var(--offset-xl);
+  padding-bottom: var(--offset-xl);
+  background: url("../img/bg-construction.png");
+  background-position: left top;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+
+  &__subtitle {
+    margin-bottom: var(--offset-l);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--offset-l);
+    gap: var(--gap);
+
+    @include mobile {
+      gap: 5px;
+    }
+  }
+
+  &__item {
+    width: calc((100% - (3 * var(--gap))) / 4);
+
+    @include small-tablet {
+      width: calc((100% - (1 * var(--gap))) / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    @include flex-v-center;
+
+    border-radius: var(--border-r-s);
+    padding: var(--offset-s) var(--offset-m);
+    background-color: var(--c-grey-light);
+    transition: background-color var(--duration-medium), opacity var(--duration-medium), box-shadow var(--duration-medium);
+
+    svg {
+      display: block;
+      margin-right: var(--offset-s);
+      width: 24px;
+      height: 30px;
+      fill: var(--c-dark);
+      object-fit: cover;
+      transition: fill var(--duration-medium);
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--c-dark);
+    }
+
+    @include hover {
+      box-shadow: var(--box-shadow-small);
+      background-color: var(--c-white);
+
+      svg {
+        fill: var(--c-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline-color: var(--c-accent-dark);
+    }
+
+    &:active {
+      opacity: var(--opacity);
+    }
+
+    @include small-tablet {
+      padding: 5px;
+
+      svg {
+        width: 16px;
+        height: 24px;
+      }
+    }
+
+    @include mobile {
+      background-color: var(--c-white);
+    
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include mobile {
+    background-color: var(--c-grey-light);
+  }
+}

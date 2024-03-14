@@ -1,0 +1,9 @@
+@keyframes scrolldown-offset {
+  37.5% {
+    stroke-dashoffset: 0;
+  }
+
+  75% {
+    stroke-dashoffset: -5;
+  }
+}
