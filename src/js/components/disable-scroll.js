@@ -1,14 +1,12 @@
-import vars from '../_vars';
-
 export const disableScroll = () => {
   const fixBlocks = document?.querySelectorAll('.fixed-block');
   const pagePosition = window.scrollY;
-  const paddingOffset = `${(window.innerWidth - vars.bodyEl.offsetWidth)}px`;
+  const paddingOffset = `${(window.innerWidth - document.body.offsetWidth)}px`;
 
-  vars.htmlEl.style.scrollBehavior = 'none';
+  document.documentElement.style.scrollBehavior = 'none';
   fixBlocks.forEach(el => { el.style.paddingRight = paddingOffset; });
-  vars.bodyEl.style.paddingRight = paddingOffset;
-  vars.bodyEl.classList.add('dis-scroll');
-  vars.bodyEl.dataset.position = pagePosition;
-  vars.bodyEl.style.top = `-${pagePosition}px`;
+  document.body.style.paddingRight = paddingOffset;
+  document.body.classList.add('dis-scroll');
+  document.body.dataset.position = pagePosition;
+  document.body.style.top = `-${pagePosition}px`;
 }

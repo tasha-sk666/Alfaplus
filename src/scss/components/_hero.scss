@@ -30,6 +30,10 @@
     text-transform: uppercase;
     color: var(--c-blue);
 
+    .accent-typography:nth-child(3) {
+      color: var(--c-accent);
+    }
+
     @include mobile {
       margin-bottom: 24px;
       font-size: 30px;

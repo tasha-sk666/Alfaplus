@@ -1,0 +1,46 @@
+.page-contact {
+  @include flex-all-sb;
+
+  transition: opacity var(--duration-medium);
+
+  svg {
+    @include circle-icon(36px, 36px, var(--c-accent));
+
+    margin-right: var(--offset-s);
+  }
+
+  p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--c-dark);
+    transition: color var(--duration-medium);
+  }
+
+  span {
+    font-size: 14px;
+    color: var(--c-dark);
+  }
+
+  @include hover {
+    p {
+      color: var(--c-accent);
+    }
+  }
+
+  &:active {
+    opacity: var(--opacity);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--c-almond);
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+}

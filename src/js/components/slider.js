@@ -2,38 +2,40 @@ import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 Swiper.use([Navigation, Pagination, Scrollbar]);
 import { isMobile } from './check-viewport';
 
-const projectSlider = document.querySelector(".projects__slider")
-const swiper = new Swiper(projectSlider, {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  watchSlidesProgress: true,
-  navigation: {
-    nextEl: '.projects__btn-next',
-    prevEl: '.projects__btn-prev',
-  },
-  scrollbar: {
-    el: '.projects__scrollbar',
-    draggable: true,
-    dragSize: '200px'
-  },
-  a11y: {
-    prevSlideMessage: 'Предыдущий слайд',
-    nextSlideMessage: 'Следующий слайд',
-  },
-  breakpoints: {
-    1025: {
-      slidesPerView: 3,
+const projectSliderInit = () => {
+  const projectSlider = document?.querySelector(".projects__slider");
+  const swiper = new Swiper(projectSlider, {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.projects__btn-next',
+      prevEl: '.projects__btn-prev',
     },
-    576: {
-      slidesPerView: 2,
+    scrollbar: {
+      el: '.projects__scrollbar',
+      draggable: true,
+      dragSize: '200px'
     },
-    320: {
-      slidesPerView: 1,
+    a11y: {
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
     },
-  }
-});
+    breakpoints: {
+      1025: {
+        slidesPerView: 3,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    }
+  });
+}
 
-function initBenefitsSlider() {
+const benefitsSliderInit = () => {
   let benefitsSlider;
 
   if (isMobile()) {
@@ -48,7 +50,7 @@ function initBenefitsSlider() {
   }
 }
 
-function initInfoSlider() {
+const infoSliderInit = () => {
   let infoSlider;
 
   if (isMobile()) {
@@ -64,11 +66,12 @@ function initInfoSlider() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initBenefitsSlider();
-  initInfoSlider();
+  projectSliderInit();
+  benefitsSliderInit();
+  infoSliderInit();
 });
 
 window.addEventListener("resize", () => {
-  initBenefitsSlider();
-  initInfoSlider();
+  benefitsSliderInit();
+  infoSliderInit();
 });

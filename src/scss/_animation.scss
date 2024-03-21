@@ -9,3 +9,101 @@
     animation: scrolldown-offset 2s infinite;
   }
 }
+
+.title {
+  opacity: 0;
+
+  &::before {
+    opacity: 0;
+    transform: translate(-100%, 0);
+  }
+
+  .active & {
+    animation: fadeIn var(--duration-short) both;
+
+    &::before {
+      animation: title-pseudo_fadein var(--duration-short) var(--delay-short) both;
+    }
+  }
+}
+
+.subtitle {
+  opacity: 0;
+
+  .active & {
+    animation: fadeIn var(--duration-medium) var(--delay-medium) both;
+  }
+}
+
+.decorate-box__item {
+  transform-origin: bottom left;
+  transition: transform var(--duration-long);
+  transition-delay: var(--delay-medium);
+
+  &--fill {
+    transform: translateX(200%) rotate(0);
+  }
+
+  &--bg {
+    transform: translateX(100%) rotate(0);
+  }
+
+  .active & {
+    transform: translateX(0) rotate(-45deg);
+  }
+}
+
+.benefits__item {
+  opacity: 0;
+  transform: translate(0, 50px);
+
+  .active & {
+    animation: fadeInBottom var(--duration-medium) both;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: (0.4s + (0.1s * $i));
+      }
+    }
+  }
+}
+
+.price__list {
+  opacity: 0;
+
+  .active & {
+    animation: fadeIn var(--duration-medium) var(--delay-short) both;
+  }
+}
+
+.tabs {
+  opacity: 0;
+
+  .active & {
+    animation: fadeIn var(--duration-medium) var(--delay-medium) both;
+  }
+}
+
+.request__form,
+.contact__form {
+  opacity: 0;
+
+  .active & {
+    animation: fadeIn var(--duration-medium) both;
+  }
+}
+
+.info__item {
+  opacity: 0;
+  transform: translate(0, 50px);
+
+  .active & {
+    animation: fadeInBottom var(--duration-medium) both;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: (0.4s + (0.1s * $i));
+      }
+    }
+  }
+}

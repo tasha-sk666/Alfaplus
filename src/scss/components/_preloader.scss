@@ -1,0 +1,68 @@
+.preloader {
+  @include bg-cover;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: url("../img/wall.jpg"), #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: #1e212c;
+  }
+
+  &__car {
+    @include bg-cover;
+
+    position: absolute;
+    left: -300px;
+    bottom: 20vh;
+    width: 174px;
+    height: 90px;
+    transform: translateX(0);
+    transition: transform 4s ease-in-out;
+
+    &--one {
+      background-image: url("../img/car-1.png");
+    }
+
+    &--two {
+      background-image: url("../img/car-2.png");
+      transition-delay: 0.4s;
+    }
+
+    @include small-tablet {
+      left: -200px;
+      width: 100px;
+      height: 52px;
+    }
+  }
+}
+
+.preloader-animation {
+  .preloader__car {
+    transform: translateX(100vw);
+
+    @include small-tablet {
+      transform: translateX(850px);
+    }
+  }
+}
+
+.preloader-none {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}

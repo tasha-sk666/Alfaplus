@@ -12,90 +12,8 @@
   }
 }
 
-.page-contact {
-  @include flex-all-sb;
-
-  transition: opacity var(--duration-medium);
-
-  svg {
-    @include circle-icon(36px, 36px, var(--c-accent));
-
-    margin-right: var(--offset-s);
-  }
-
-  p {
-    margin: 0;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--c-dark);
-    transition: color var(--duration-medium);
-  }
-
-  span {
-    font-size: 14px;
-    color: var(--c-dark);
-  }
-
-  @include hover {
-    p {
-      color: var(--c-accent);
-    }
-  }
-
-  &:active {
-    opacity: var(--opacity);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 3px solid var(--c-almond);
-  }
-
-  @include mobile {
-    font-size: 16px;
-  }
-}
-
 .color-accent {
   color: var(--c-accent);
-}
-
-.btn {
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--c-accent);
-  border-radius: var(--border-r-xl);
-  padding: 24px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: var(--c-white);
-  background-color: var(--c-accent);
-  transition: color var(--duration-medium), background-color var(--duration-medium), box-shadow var(--duration-medium), opacity var(--duration-medium);
-
-  @include hover {
-    box-shadow: var(--box-shadow-small);
-    color: var(--c-accent);
-    background-color: var(--c-white);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline-color: var(--c-accent-dark);
-  }
-
-  &:active {
-    opacity: var(--opacity);
-  }
-
-  @include small-tablet {
-    padding: 16px var(--offset-m);
-  }
 }
 
 .title {
@@ -111,12 +29,11 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 0;
     border-radius: 100%;
     width: 14px;
     height: 14px;
     background-color: var(--c-accent);
-    transform: translateY(-50%);
   }
 }
 
@@ -132,15 +49,6 @@
     max-width: 340px;
     font-size: 24px;
   }
-
-  @include small-tablet {
-    font-size: 26px;
-  }
-
-  @include mobile {
-    max-width: 100%;
-    font-size: 20px;
-  }
 }
 
 .decorate-box {
@@ -151,7 +59,7 @@
     border-radius: var(--border-r-s);
     width: 90px;
     height: 90px;
-    transform: rotate(-45deg);
+    // transform: rotate(-45deg);
 
     &--fill {
       z-index: 3;

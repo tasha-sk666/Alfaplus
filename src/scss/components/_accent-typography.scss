@@ -1,0 +1,14 @@
+.accent-typography__word {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 5px;
+}
+
+.accent-typography__word > span {
+  display: inline-block;
+  transform: translate3d(0, 1em, 0);
+}
+
+.accent-typography.active .accent-typography__word > span {
+  transform: translate3d(0, 0, 0);
+}

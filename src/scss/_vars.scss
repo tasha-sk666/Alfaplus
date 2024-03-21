@@ -35,12 +35,17 @@
   // transition
   --duration-short: 0.2s;
   --duration-medium: 0.3s;
+  --duration-long: 0.4s;
+  --delay-short: 0.2s;
+  --delay-medium: 0.3s;
+  --delay-long: 0.4s;
 }
 
 @include tablet {
   :root {
     --offset-xl: 40px;
     --offset-l: 24px;
+    --offset-m: 16px;
     --offset-s: 10px;
     --gap: 15px;
   }
