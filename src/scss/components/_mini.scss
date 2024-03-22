@@ -59,7 +59,6 @@
     border-radius: var(--border-r-s);
     width: 90px;
     height: 90px;
-    // transform: rotate(-45deg);
 
     &--fill {
       z-index: 3;
@@ -80,9 +79,8 @@
       height: 60px;
     }
 
-    @include mobile {
-      width: 40px;
-      height: 40px;
+    @include small-tablet {
+      display: none;
     }
   }
 }

@@ -27,37 +27,39 @@
     @include bg-cover;
 
     position: absolute;
-    left: -300px;
     bottom: 20vh;
     width: 174px;
     height: 90px;
     transform: translateX(0);
-    transition: transform 4s ease-in-out;
 
     &--one {
+      left: -200px;
       background-image: url("../img/car-1.png");
     }
 
     &--two {
+      left: -800px;
       background-image: url("../img/car-2.png");
-      transition-delay: 0.4s;
     }
 
     @include small-tablet {
-      left: -200px;
       width: 100px;
       height: 52px;
+
+      &--one {
+        left: -200px;
+      }
+
+      &--two {
+        left: -500px;
+      }
     }
   }
 }
 
 .preloader-animation {
   .preloader__car {
-    transform: translateX(100vw);
-
-    @include small-tablet {
-      transform: translateX(850px);
-    }
+    animation: preloader_car 4s ease-in-out forwards;
   }
 }
 

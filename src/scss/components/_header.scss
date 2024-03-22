@@ -7,9 +7,6 @@
   padding-bottom: 8px;
   width: 100%;
   background-color: #ffffffe6;
-  transform: translateY(0);
-  transition: transform var(--duration-medium);
-  will-change: transform;
 
   &__container {
     @include flex-all-sb;
@@ -29,12 +26,6 @@
 
   &__contact {
     z-index: 11;
-
-    .page-contact__wrapper {
-      @include mobile {
-        display: none;
-      }
-    }
 
     @include tablet {
       margin-right: var(--offset-m);

@@ -1,3 +1,13 @@
+@keyframes preloader_car {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

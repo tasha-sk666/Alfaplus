@@ -1,4 +1,4 @@
-import { throttle } from '../functions/throttle';
+import { throttle } from './throttle';
 
 const fixFullheight = () => {
   let vh = window.innerHeight;

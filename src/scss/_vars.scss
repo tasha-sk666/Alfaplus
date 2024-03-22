@@ -13,14 +13,13 @@
   --offset-m: 24px;
   --offset-s: 15px;
   --gap: 30px;
-  --border-r-xl: 50px;
+  --border-r-xl: 100px;
   --border-r-s: 12px;
   --box-shadow: 0 0 20px 5px #969ea636;
   --box-shadow-small: 0 0 10px 5px #969ea636;
   --opacity: 0.8;
   --zindex-header: 10;
   --zindex-nav: 9;
-  --vh: 100vh;
 
   // colors
   --c-white: #fff;
@@ -41,6 +40,12 @@
   --delay-long: 0.4s;
 }
 
+.page--ios {
+  :root & {
+    --vh: 100svh;
+  }
+}
+
 @include tablet {
   :root {
     --offset-xl: 40px;
@@ -48,5 +53,6 @@
     --offset-m: 16px;
     --offset-s: 10px;
     --gap: 15px;
+    --vh: 100svh;
   }
 }

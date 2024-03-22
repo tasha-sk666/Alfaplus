@@ -1,6 +1,64 @@
 .header {
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform var(--duration-medium), opacity var(--duration-long) 0.4s;
+  will-change: transform;
+
   &.hide {
     transform: translateY(-100%);
+  }
+
+  .page-visible & {
+    opacity: 1;
+  }
+}
+
+.hero {
+  .hero__list li {
+    opacity: 0;
+    transform: translate(0, 50px);
+  }
+
+  .hero__btn,
+  .scrolldown {
+    opacity: 0;
+  }
+
+  .hero__img {
+    opacity: 0;
+  }
+
+  .page-visible & {
+    .hero__title.accent-typography {
+      .accent-typography__word > span {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .hero__list li {
+      animation: fadeInBottom var(--duration-medium) 1s forwards;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: (200ms * $i);
+        }
+      }
+    }
+
+    .hero__btn,
+    .scrolldown {
+      animation: fadeIn var(--duration-medium) 1.5s forwards;
+    }
+
+    .hero__img {
+      animation: fadeIn var(--duration-long) forwards;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: (1s + (0.03s * $i));
+        }
+      }
+    }
   }
 }
 
@@ -31,7 +89,7 @@
   opacity: 0;
 
   .active & {
-    animation: fadeIn var(--duration-medium) var(--delay-medium) both;
+    animation: fadeIn var(--duration-long) var(--delay-medium) both;
   }
 }
 
