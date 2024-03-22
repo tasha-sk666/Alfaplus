@@ -1,4 +1,5 @@
 import { throttle } from './throttle';
+import { mobileCheck } from './mobile-check';
 
 const fixFullheight = () => {
   let vh = window.innerHeight;
