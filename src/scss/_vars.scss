@@ -40,12 +40,6 @@
   --delay-long: 0.4s;
 }
 
-.page--ios {
-  :root & {
-    --vh: 100svh;
-  }
-}
-
 @include tablet {
   :root {
     --offset-xl: 40px;

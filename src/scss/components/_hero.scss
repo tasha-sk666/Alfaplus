@@ -12,6 +12,14 @@
     padding-bottom: 40px;
     height: var(--vh);
     max-height: 1080px;
+
+    .page--ios & {
+      height: 100svh;
+    }
+
+    .page--android & {
+      height: 100svh;
+    }
   }
 
   &__content {

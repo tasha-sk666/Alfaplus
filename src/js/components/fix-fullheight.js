@@ -7,6 +7,7 @@ const fixFullheight = () => {
 
 let fixHeight = throttle(fixFullheight);
 
+mobileCheck();
 fixHeight();
 
 window.addEventListener('resize', fixHeight);
