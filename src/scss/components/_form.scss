@@ -32,7 +32,7 @@
 
   &__descr {
     margin: 0;
-    margin-bottom: var(--offset-l);
+    margin-bottom: 40px;
     font-weight: 400;
     font-size: 16px;
     color: inherit;
@@ -44,16 +44,18 @@
 
   &__label {
     position: relative;
+    margin-bottom: var(--offset-m);
 
     .just-validate-error-label {
-      position: absolute;
-      top: -22px;
+      padding-top: 10px;
+      padding-left: 21px;
+      font-size: 16px;
+      line-height: 120%;
       color: #ff3b3b !important;
     }
   }
 
   &__input {
-    margin-bottom: var(--offset-m);
     border: 2px solid var(--c-white);
     border-radius: var(--border-r-xl);
     padding: 21px var(--offset-m);
@@ -63,6 +65,14 @@
     color: var(--c-dark);
     background-color: var(--c-white);
     transition: border-color var(--duration-medium);
+
+    &.just-validate-error-field {
+      border-color: #ff3b3b;
+    }
+
+    &.just-validate-success-field {
+      border-color: var(--c-green);
+    }
 
     &::placeholder {
       opacity: 0.6;
@@ -113,9 +123,11 @@
 
 .form-message {
   position: fixed;
-  right: 15px;
-  bottom: 15px;
+  right: var(--container-offset);
+  bottom: var(--container-offset);
   z-index: var(--zindex-form-message);
+  display: flex;
+  align-items: center;
   border-radius: var(--border-r-s);
   padding: 15px;
   box-shadow: var(--box-shadow-small);
@@ -123,21 +135,39 @@
   transition: transform var(--duration-medium);
   will-change: transform;
 
+  &.active {
+    transform: translateX(0);
+  }
+
   &--success {
-    background-color: #c9ffd0;
+    color: var(--c-green-dark);
+    background-color: var(--c-green);
   }
 
   &--error {
-    background-color: #ff7b7b;
+    color: var(--c-red-dark);
+    background-color: var(--c-red);
   }
 
   p {
     margin: 0;
     font-size: 16px;
-    color: var(--c-blue);
+    color: currentColor;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
-  &.active {
-    transform: translateX(0);
+  svg {
+    display: inline-block;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  @include mobile {
+    width: calc(100% - (var(--container-offset)) * 2);
   }
 }

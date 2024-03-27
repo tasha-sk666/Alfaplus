@@ -35,6 +35,10 @@
   --c-grey-light: #f4f5f6;
   --c-grey-dark: #5c5c73;
   --c-dark: #1e212c;
+  --c-green: #edf7ed;
+  --c-green-dark: #1e4620;
+  --c-red: #fdeded;
+  --c-red-dark: #5f2120;
 
   // transition
   --duration-short: 0.2s;
@@ -50,7 +54,6 @@
     --offset-l: 24px;
     --offset-m: 16px;
     --offset-s: 10px;
-    --gap: 15px;
     --vh: 100svh;
   }
 }

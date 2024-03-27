@@ -8,11 +8,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 40px;
     height: var(--vh);
     max-height: 1080px;
-    min-height: 700px;
 
     .page--ios & {
       height: 100svh;
@@ -21,14 +20,10 @@
     .page--android & {
       height: 100svh;
     }
-
-    @include tablet {
-      min-height: auto;
-    }
   }
 
   &__content {
-    flex-grow: 2;
+    max-width: 665px;
 
     @include mobile {
       width: 100%;
@@ -89,8 +84,10 @@
   &__images {
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: center;
     width: 100%;
+    height: 100%;
+    max-height: 600px;
     gap: var(--gap);
 
     @include tablet {
@@ -99,12 +96,10 @@
   }
 
   &__img {
+    @include bg-cover;
+
     overflow: hidden;
     border-radius: var(--border-r-s);
-
-    img {
-      width: 100%;
-    }
 
     &:nth-child(1) {
       align-self: end;
@@ -113,6 +108,7 @@
     }
 
     &:nth-child(2) {
+      align-self: end;
       width: 43%;
       height: 43%;
     }
@@ -124,8 +120,8 @@
     }
 
     &:nth-child(4) {
-      width: 57%;
-      height: 57%;
+      width: 50%;
+      height: 50%;
     }
 
     &:nth-child(5) {
@@ -137,21 +133,6 @@
   &__btn {
     @include mobile {
       width: 100%;
-    }
-  }
-
-  .scrolldown {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    width: 30px;
-    height: auto;
-    color: var(--c-grey-dark);
-    opacity: 0.5;
-    transform: translateX(-50%);
-
-    @include mobile {
-      display: none;
     }
   }
 }

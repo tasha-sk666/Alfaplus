@@ -42,22 +42,12 @@
   }
 }
 
-@keyframes scrolldown-offset {
-  37.5% {
-    stroke-dashoffset: 0;
-  }
-
-  75% {
-    stroke-dashoffset: -5;
-  }
-}
-
 @keyframes breathing {
-  0% { 
+  0% {
     transform: scale(1);
   }
 
-  50% { 
+  50% {
     transform: scale(1.05);
   }
 }

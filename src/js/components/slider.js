@@ -8,9 +8,10 @@ const projectSliderInit = () => {
 
   if (projectSlider){
     const projectCard = projectSlider.querySelectorAll('.project-card');
+
     projectCard.forEach((card) => {
-      const cardImgSrc = card.querySelector('img').src
-      const galleryLink = `<a data-fslightbox="project-gallery" href="${cardImgSrc}"></a>`
+      const cardImgSrc = card.querySelector('img').src;
+      const galleryLink = `<a data-fslightbox="project-gallery" href="${cardImgSrc}"></a>`;
       card.insertAdjacentHTML('beforeend', galleryLink);
       refreshFsLightbox();
     });
