@@ -6,7 +6,12 @@
   &__header {
     @include flex-all-sb;
 
+    gap: 50px;
     margin-bottom: var(--offset-l);
+
+    @include small-tablet {
+      gap: 0;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -100,6 +105,10 @@
 
     &--bg {
       background-image: url("../img/bg-sand.jpg");
+    }
+
+    @include small-tablet {
+      display: none;
     }
   }
 }

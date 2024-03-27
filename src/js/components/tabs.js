@@ -1,3 +1,9 @@
 import GraphTabs from 'graph-tabs';
 
-const tabs = new GraphTabs('price-tab');
+document.addEventListener("DOMContentLoaded", () => {
+  const tabItem = document.querySelector('.tabs')
+
+  if(tabItem) {
+    const tabs = new GraphTabs('price-tab');
+  }
+});

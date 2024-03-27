@@ -1,11 +1,6 @@
 .header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
   padding-top: 8px;
   padding-bottom: 8px;
-  width: 100%;
   background-color: #ffffffe6;
 
   &__container {
@@ -17,7 +12,7 @@
   }
 
   .logo {
-    z-index: 11;
+    z-index: var(--zindex-nav-items);
 
     @include tablet {
       margin-right: auto;
@@ -25,7 +20,7 @@
   }
 
   &__contact {
-    z-index: 11;
+    z-index: var(--zindex-nav-items);
 
     @include tablet {
       margin-right: var(--offset-m);
@@ -41,4 +36,12 @@
       }
     }
   }
+}
+
+.header-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }

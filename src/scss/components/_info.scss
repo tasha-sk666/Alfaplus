@@ -6,7 +6,12 @@
   &__header {
     @include flex-all-sb;
 
+    gap: 50px;
     margin-bottom: var(--offset-l);
+
+    @include small-tablet {
+      gap: 0;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -20,46 +25,31 @@
     }
   }
 
-  &__wrapper {
-    @include small-tablet {
-      margin: 0;
-      padding: 0;
-      padding-left: max(var(--container-offset), (100% - var(--content-width)) / 2);
-      width: unset;
-    }
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: var(--gap);
 
-    @include tablet {
-      grid-template-columns: repeat(9, 1fr);
-    }
-
     @include small-tablet {
       display: flex;
-      gap: unset;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
   &__item {
-    grid-column: 4 span;
     align-self: stretch;
+    grid-column: 4 span;
     width: auto;
     height: auto;
 
-    @include tablet {
-      grid-column: 3 span;
-    }
-
     @include small-tablet {
-      width: 45%;
+      max-width: 48%;
     }
 
     @include mobile {
-      width: 65%;
+      width: 100%;
+      min-width: 100%;
     }
   }
 
@@ -76,6 +66,10 @@
 
     &--bg {
       background-image: url("../img/bg-concrete-s.jpg");
+    }
+
+    @include small-tablet {
+      display: none;
     }
   }
 }

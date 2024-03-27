@@ -1,0 +1,44 @@
+.error-site-container {
+  @include footerToBottom;
+}
+
+.page-error {
+  &__container {
+    @include bg-cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    height: 100%;
+    background-image: url("../img/wall.jpg");
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: clamp(90px, 16vw, 250px);
+      color: var(--c-dark);
+    }
+
+    p {
+      margin: 0;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: clamp(1.125rem, 0.85rem + 1.375vw, 2.5rem);
+      color: var(--c-dark);
+    }
+
+    a {
+      display: block;
+    }
+  }
+}

@@ -18,8 +18,13 @@
   --box-shadow: 0 0 20px 5px #969ea636;
   --box-shadow-small: 0 0 10px 5px #969ea636;
   --opacity: 0.8;
-  --zindex-header: 10;
-  --zindex-nav: 9;
+  --zindex-form-message: 100;
+  --zindex-whatsapp: 50;
+  --zindex-modal: 40;
+  --zindex-burger: 30;
+  --zindex-header: 20;
+  --zindex-nav: 10;
+  --zindex-nav-items: 11;
 
   // colors
   --c-white: #fff;
@@ -42,7 +47,6 @@
 
 @include tablet {
   :root {
-    --offset-xl: 40px;
     --offset-l: 24px;
     --offset-m: 16px;
     --offset-s: 10px;

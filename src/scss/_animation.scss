@@ -1,15 +1,17 @@
 .header {
-  opacity: 0;
-  transform: translateY(0);
-  transition: transform var(--duration-medium), opacity var(--duration-long) 0.4s;
-  will-change: transform;
+  .page-site-container & {
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform var(--duration-medium), opacity var(--duration-long) 0.4s;
+    will-change: transform;
 
-  &.hide {
-    transform: translateY(-100%);
-  }
+    &.hide {
+      transform: translateY(-100%);
+    }
 
-  .page-visible & {
-    opacity: 1;
+    .page-visible & {
+      opacity: 1;
+    }
   }
 }
 
@@ -17,6 +19,7 @@
   .hero__list li {
     opacity: 0;
     transform: translate(0, 50px);
+    will-change: transform;
   }
 
   .hero__btn,
@@ -74,6 +77,7 @@
   &::before {
     opacity: 0;
     transform: translate(-100%, 0);
+    will-change: transform;
   }
 
   .active & {
@@ -97,6 +101,7 @@
   transform-origin: bottom left;
   transition: transform var(--duration-long);
   transition-delay: var(--delay-medium);
+  will-change: transform;
 
   &--fill {
     transform: translateX(200%) rotate(0);
@@ -114,6 +119,7 @@
 .benefits__item {
   opacity: 0;
   transform: translate(0, 50px);
+  will-change: transform;
 
   .active & {
     animation: fadeInBottom var(--duration-medium) both;
@@ -154,6 +160,7 @@
 .info__item {
   opacity: 0;
   transform: translate(0, 50px);
+  will-change: transform;
 
   .active & {
     animation: fadeInBottom var(--duration-medium) both;

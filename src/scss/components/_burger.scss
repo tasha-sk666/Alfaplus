@@ -4,7 +4,7 @@
   --burger-line-height: 2px;
 
   position: relative;
-  z-index: 30;
+  z-index: var(--zindex-burger);
   display: none;
   border: none;
   padding: 0;

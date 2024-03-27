@@ -1,7 +1,10 @@
 import './components/animation';
-import './components/fix-fullheight.js';
-import './components/scroll-hide.js';
+import './components/page-scroll';
+import './components/whatsapp-link.js';
 import './components/burger.js';
+import './components/fix-fullheight.js';
+import './components/header-hide.js';
 import './components/tabs.js';
 import './components/slider.js';
+import './components/validate-forms.js';
 import './components/modal.js';

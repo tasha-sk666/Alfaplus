@@ -1,0 +1,28 @@
+.whatsapp-link {
+  @include bg-cover;
+
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: var(--zindex-whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  background-image: url("../img/whatsapp.png");
+  transition: opacity var(--duration-medium), transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  animation: breathing 3s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
+  will-change: transform;
+
+  @include hover {
+    transform: scale(1.1);
+  }
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -32,13 +32,23 @@
 
   &__descr {
     margin: 0;
-    margin-bottom: var(--offset-m);
+    margin-bottom: var(--offset-l);
     font-weight: 400;
     font-size: 16px;
     color: inherit;
 
     @include mobile {
       font-size: 14px;
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    .just-validate-error-label {
+      position: absolute;
+      top: -22px;
+      color: #ff3b3b !important;
     }
   }
 
@@ -98,5 +108,36 @@
 
   @include small-tablet {
     font-size: 12px;
+  }
+}
+
+.form-message {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: var(--zindex-form-message);
+  border-radius: var(--border-r-s);
+  padding: 15px;
+  box-shadow: var(--box-shadow-small);
+  transform: translateX(120%);
+  transition: transform var(--duration-medium);
+  will-change: transform;
+
+  &--success {
+    background-color: #c9ffd0;
+  }
+
+  &--error {
+    background-color: #ff7b7b;
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--c-blue);
+  }
+
+  &.active {
+    transform: translateX(0);
   }
 }

@@ -4,19 +4,21 @@ import { AccentTypographyBuild } from "./accent-typography";
 import { sectionObserver } from "./section-observer";
 
 const preloaderHide = () => {
-  disableScroll();
   const body = document.body;
-  const preloader = document.querySelector('.preloader')
-  preloader.classList.add('preloader-animation');
+  const preloader = document.querySelector('.preloader');
 
-  setTimeout(() => {
-    preloader.classList.remove('preloader-animation');
-    preloader.classList.add('preloader-none');
-    body.classList.add('page-visible');
-    enableScroll();
-  }, 3000);
+  if (preloader) {
+    disableScroll();
+    preloader.classList.add('preloader-animation');
+
+    setTimeout(() => {
+      preloader.classList.remove('preloader-animation');
+      preloader.classList.add('preloader-none');
+      body.classList.add('page-visible');
+      enableScroll();
+    }, 2500);
+  }
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const animationTopScreenTextLine = new AccentTypographyBuild(`.hero__title`, 500, `active`, `transform`);

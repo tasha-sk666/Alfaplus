@@ -1,8 +1,5 @@
 import { disableScroll } from './disable-scroll';
 import { enableScroll } from './enable-scroll';
-import SmoothScroll from 'smooth-scroll';
-
-const scroll = new SmoothScroll('a[href*="#"]');
 
 (function(){
   const burger = document?.querySelector('[data-burger]');
