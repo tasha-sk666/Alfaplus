@@ -6,7 +6,7 @@ import fslightbox from 'fslightbox';
 const projectSliderInit = () => {
   const projectSlider = document.querySelector(".projects__slider");
 
-  if (projectSlider){
+  if (projectSlider) {
     const projectCard = projectSlider.querySelectorAll('.project-card');
 
     projectCard.forEach((card) => {
@@ -20,6 +20,10 @@ const projectSliderInit = () => {
       slidesPerView: 3,
       spaceBetween: 30,
       watchSlidesProgress: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       navigation: {
         nextEl: '.projects__btn-next',
         prevEl: '.projects__btn-prev',

@@ -71,14 +71,14 @@
     overflow: hidden;
     border-radius: var(--border-r-s);
     box-shadow: var(--box-shadow);
-    opacity: 0;
+    // opacity: 0;
     transition: opacity 1s ease-in-out;
     will-change: transform;
   }
 
-  .swiper-slide-visible {
-    opacity: 1;
-  }
+  // .swiper-slide-visible {
+  //   opacity: 1;
+  // }
 
   &__scrollbar {
     margin-top: var(--offset-l);

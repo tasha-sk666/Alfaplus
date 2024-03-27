@@ -28,8 +28,6 @@
   &__wrapper {
     @include small-tablet {
       margin: 0;
-      padding: 0;
-      padding-left: max(var(--container-offset), (100% - var(--content-width)) / 2);
       width: unset;
     }
   }
