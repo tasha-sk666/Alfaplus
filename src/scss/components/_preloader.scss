@@ -13,6 +13,21 @@
   height: 100%;
   background: url("../img/wall.jpg"), #fff;
 
+  &::after {
+    @include bg-cover;
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 183px;
+    height: 80px;
+    background-size: contain;
+    background-image: url("../img/logo-color.png");
+    opacity: 0.6;
+    transform: translate(-50%, -40%);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -24,45 +39,50 @@
   }
 
   &__car {
+    --width: 174px;
+    --height: 127px;
+
     @include bg-cover;
 
     position: absolute;
     bottom: 20vh;
-    width: 174px;
-    height: 90px;
+    width: var(--width);
+    height: var(--height);
+    background-position: bottom;
     transform: translateX(0);
 
     &--one {
-      left: -200px;
+      left: calc(((var(--width) + 15px) * 1) * (-1));
       background-image: url("../img/car-1.png");
     }
 
     &--two {
-      left: -400px;
+      left: calc(((var(--width) + 15px) * 2) * (-1));
       background-image: url("../img/car-2.png");
     }
 
+    &--three {
+      left: calc(((var(--width) + 15px) * 3) * (-1));
+      background-image: url("../img/car-3.png");
+    }
+
     @include small-tablet {
-      width: 100px;
-      height: 52px;
-
-      &--one {
-        left: -120px;
-      }
-
-      &--two {
-        left: -240px;
-      }
+      --width: 100px;
+      --height: 74px;
     }
   }
 }
 
 .preloader-animation {
   .preloader__car {
-    animation: preloader_car 2.2s ease-in-out forwards;
+    animation: preloader_car 2.3s ease forwards;
 
     &--two {
-      animation-delay: 200ms;
+      animation-delay: 170ms;
+    }
+
+    &--three {
+      animation-delay: 340ms;
     }
   }
 }
