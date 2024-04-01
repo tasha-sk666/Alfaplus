@@ -50,7 +50,7 @@
 
     .hero__btn,
     .scrolldown {
-      animation: fadeIn var(--duration-medium) 1.5s forwards;
+      animation: fadeIn var(--duration-medium) 1s forwards;
     }
 
     .hero__img {
@@ -116,7 +116,7 @@
   }
 }
 
-.benefits__item {
+.benefits__list .page-card {
   opacity: 0;
   transform: translate(0, 50px);
   will-change: transform;
@@ -157,7 +157,7 @@
   }
 }
 
-.info__item {
+.info__list .page-card {
   opacity: 0;
   transform: translate(0, 50px);
   will-change: transform;

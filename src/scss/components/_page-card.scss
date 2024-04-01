@@ -1,23 +1,37 @@
 .page-card {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   border-radius: var(--border-r-s);
   padding: var(--offset-l) var(--offset-m);
   box-shadow: var(--box-shadow);
   background-color: var(--c-white);
+  gap: var(--gap);
+
+  @include small-tablet {
+    flex-direction: row;
+  }
+
+  @include mobile {
+    gap: 15px;
+  }
 
   &__icon {
-    margin-bottom: var(--offset-m);
+    @include bg-cover;
+
     width: 80px;
     height: 80px;
     min-width: 80px;
 
-    img {
-      height: 100%;
+    @include mobile {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
     }
   }
 
-  &__title {
+  h3,
+  h4 {
     margin: 0;
     margin-bottom: var(--offset-s);
     font-weight: 500;
@@ -26,7 +40,7 @@
     color: var(--c-blue);
   }
 
-  &__descr {
+  p {
     margin: 0;
     font-size: 16px;
     line-height: 120%;
@@ -37,7 +51,13 @@
     }
   }
 
-  &__item {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
     position: relative;
     padding-left: 20px;
     font-size: 16px;

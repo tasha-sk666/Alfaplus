@@ -32,7 +32,7 @@
 
   &__descr {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: var(--offset-m);
     font-weight: 400;
     font-size: 16px;
     color: inherit;
@@ -52,6 +52,10 @@
       font-size: 16px;
       line-height: 120%;
       color: #ff3b3b !important;
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
   }
 

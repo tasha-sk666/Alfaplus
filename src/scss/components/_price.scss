@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     margin-bottom: var(--offset-l);
     gap: var(--gap);
+    row-gap: 5px;
 
     @include mobile {
       gap: 5px;
@@ -22,15 +23,7 @@
   }
 
   &__item {
-    width: calc((100% - (3 * var(--gap))) / 4);
-
-    @include small-tablet {
-      width: calc((100% - (1 * var(--gap))) / 2);
-    }
-
-    @include mobile {
-      width: 100%;
-    }
+    width: fit-content;
   }
 
   &__link {
@@ -75,8 +68,6 @@
     }
 
     @include small-tablet {
-      padding: 5px;
-
       svg {
         width: 16px;
         height: 24px;
@@ -85,9 +76,9 @@
 
     @include mobile {
       background-color: var(--c-white);
-    
+
       p {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }

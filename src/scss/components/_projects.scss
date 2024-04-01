@@ -68,17 +68,10 @@
   }
 
   .swiper-slide {
-    overflow: hidden;
-    border-radius: var(--border-r-s);
-    box-shadow: var(--box-shadow);
-    // opacity: 0;
-    transition: opacity 1s ease-in-out;
-    will-change: transform;
+    // overflow: hidden;
+    // border-radius: var(--border-r-s);
+    // box-shadow: var(--box-shadow-small);
   }
-
-  // .swiper-slide-visible {
-  //   opacity: 1;
-  // }
 
   &__scrollbar {
     margin-top: var(--offset-l);
@@ -86,7 +79,6 @@
     max-width: 600px;
 
     .swiper-scrollbar-drag {
-      width: 60%;
       background-color: var(--c-accent);
       cursor: grab;
     }
@@ -97,18 +89,41 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: var(--offset-m);
+  overflow: hidden;
+  border-radius: var(--border-r-s);
+  padding: var(--offset-s);
   height: 420px;
+  box-shadow: var(--box-shadow-small);
 
   img {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--duration-medium);
     will-change: transform;
+  }
+
+  &__tags {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+
+    li {
+      border-radius: var(--border-r-xl);
+      padding: 10px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      color: var(--c-blue);
+      background-color: var(--c-white);
+    }
   }
 
   a {
@@ -119,33 +134,49 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-  }
 
-  &__tags {
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--c-accent);
+      opacity: 0;
+      transition: opacity var(--duration-short);
+    }
 
-    li {
-      border-radius: var(--border-r-xl);
-      padding: 10px;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 120%;
-      color: var(--c-blue);
-      background-color: var(--c-white);
+    &::before {
+      @include bg-cover;
 
-      @include mobile {
-        font-size: 14px;
-      }
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      background-image: url("../img/zoom.svg");
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity var(--duration-short);
+      z-index: 2;
     }
   }
 
   @include hover {
     img {
       transform: scale(1.1);
+    }
+
+    a {
+      &::after {
+        opacity: 0.4;
+      }
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }

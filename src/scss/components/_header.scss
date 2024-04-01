@@ -42,6 +42,6 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 100;
+  z-index: var(--zindex-header);
   width: 100%;
 }

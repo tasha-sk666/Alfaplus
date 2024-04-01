@@ -42,7 +42,14 @@
     }
   }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__item {
+    align-self: flex-start;
+
     &:not(:last-child) {
       margin-bottom: var(--offset-m);
     }

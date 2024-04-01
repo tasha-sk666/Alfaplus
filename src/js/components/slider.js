@@ -1,6 +1,5 @@
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
-Swiper.use([Navigation, Pagination, Scrollbar]);
-import { isMobile } from './check-viewport';
+import Swiper, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+Swiper.use([Navigation, Pagination, Scrollbar, A11y]);
 import fslightbox from 'fslightbox';
 
 const projectSliderInit = () => {
@@ -17,21 +16,15 @@ const projectSliderInit = () => {
     });
 
     const swiper = new Swiper(projectSlider, {
-      slidesPerView: 3,
       spaceBetween: 30,
-      watchSlidesProgress: true,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      navigation: {
-        nextEl: '.projects__btn-next',
-        prevEl: '.projects__btn-prev',
-      },
       scrollbar: {
         el: '.projects__scrollbar',
         draggable: true,
         dragSize: '200px'
+      },
+      navigation: {
+        nextEl: '.projects__btn-next',
+        prevEl: '.projects__btn-prev',
       },
       a11y: {
         prevSlideMessage: 'Предыдущий слайд',
@@ -52,30 +45,6 @@ const projectSliderInit = () => {
   }
 }
 
-const benefitsSliderInit = () => {
-  const benefitsSliderItem = document.querySelector(".benefits__swiper");
-
-  if (benefitsSliderItem) {
-    let benefitsSlider;
-
-    if (isMobile()) {
-      benefitsSlider = new Swiper(benefitsSliderItem, {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-      });
-    } else {
-      if (benefitsSlider) {
-        benefitsSlider.destroy();
-      }
-    }
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   projectSliderInit();
-  benefitsSliderInit();
-});
-
-window.addEventListener("resize", () => {
-  benefitsSliderInit();
 });
