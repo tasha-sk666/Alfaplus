@@ -74,6 +74,10 @@
       border: 2px solid var(--c-blue);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      transform: translateX(0) rotate(-45deg);
+    }
+
     @include tablet {
       width: 60px;
       height: 60px;

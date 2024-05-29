@@ -15,160 +15,163 @@
   }
 }
 
-.hero {
-  .hero__list li {
-    opacity: 0;
-    transform: translate(0, 50px);
-    will-change: transform;
-  }
-
-  .hero__btn,
-  .scrolldown {
-    opacity: 0;
-  }
-
-  .hero__img {
-    opacity: 0;
-  }
-
-  .page-visible & {
-    .hero__title.accent-typography {
-      .accent-typography__word > span {
-        transform: translate3d(0, 0, 0);
-      }
-    }
-
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
     .hero__list li {
-      animation: fadeInBottom var(--duration-medium) 1s forwards;
-
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          animation-delay: (200ms * $i);
-        }
-      }
+      opacity: 0;
+      transform: translate(0, 50px);
+      will-change: transform;
     }
 
     .hero__btn,
     .scrolldown {
-      animation: fadeIn var(--duration-medium) 1s forwards;
+      opacity: 0;
     }
 
     .hero__img {
-      animation: fadeIn var(--duration-long) forwards;
+      opacity: 0;
+    }
 
-      @for $i from 1 through 5 {
+    .page-visible & {
+      .hero__title.accent-typography {
+        .accent-typography__word > span {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      .hero__list li {
+        animation: fadeInBottom var(--duration-medium) 1s forwards;
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            animation-delay: (200ms * $i);
+          }
+        }
+      }
+
+      .hero__btn,
+      .scrolldown {
+        animation: fadeIn var(--duration-medium) 1s forwards;
+      }
+
+      .hero__img {
+        animation: fadeIn var(--duration-long) forwards;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: (1s + (0.03s * $i));
+          }
+        }
+      }
+    }
+  }
+
+  .scrolldown {
+    &__path {
+      animation: scrolldown-offset 2s infinite;
+    }
+  }
+
+  .title {
+    opacity: 0;
+
+    &::before {
+      opacity: 0;
+      transform: translate(-100%, 0);
+      will-change: transform;
+    }
+
+    .active & {
+      animation: fadeIn var(--duration-short) both;
+
+      &::before {
+        animation: title-pseudo_fadein var(--duration-short) var(--delay-short) both;
+      }
+    }
+  }
+
+  .subtitle {
+    opacity: 0;
+
+    .active & {
+      animation: fadeIn var(--duration-long) var(--delay-medium) both;
+    }
+  }
+
+  .decorate-box__item {
+    transform-origin: bottom left;
+    transition: transform var(--duration-long);
+    transition-delay: var(--delay-medium);
+    will-change: transform;
+
+    &--fill {
+      transform: translateX(200%) rotate(0);
+    }
+
+    &--bg {
+      transform: translateX(100%) rotate(0);
+    }
+
+    .active & {
+      transform: translateX(0) rotate(-45deg);
+    }
+  }
+
+  .benefits__list .page-card {
+    opacity: 0;
+    transform: translate(0, 50px);
+    will-change: transform;
+
+    .active & {
+      animation: fadeInBottom var(--duration-medium) both;
+
+      @for $i from 1 through 6 {
         &:nth-child(#{$i}) {
-          animation-delay: (1s + (0.03s * $i));
+          animation-delay: (0.4s + (0.1s * $i));
+        }
+      }
+    }
+  }
+
+  .price__list {
+    opacity: 0;
+
+    .active & {
+      animation: fadeIn var(--duration-medium) var(--delay-short) both;
+    }
+  }
+
+  .tabs {
+    opacity: 0;
+
+    .active & {
+      animation: fadeIn var(--duration-medium) var(--delay-medium) both;
+    }
+  }
+
+  .request__form,
+  .contact__form {
+    opacity: 0;
+
+    .active & {
+      animation: fadeIn var(--duration-medium) both;
+    }
+  }
+
+  .info__list .page-card {
+    opacity: 0;
+    transform: translate(0, 50px);
+    will-change: transform;
+
+    .active & {
+      animation: fadeInBottom var(--duration-medium) both;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: (0.4s + (0.1s * $i));
         }
       }
     }
   }
 }
 
-.scrolldown {
-  &__path {
-    animation: scrolldown-offset 2s infinite;
-  }
-}
-
-.title {
-  opacity: 0;
-
-  &::before {
-    opacity: 0;
-    transform: translate(-100%, 0);
-    will-change: transform;
-  }
-
-  .active & {
-    animation: fadeIn var(--duration-short) both;
-
-    &::before {
-      animation: title-pseudo_fadein var(--duration-short) var(--delay-short) both;
-    }
-  }
-}
-
-.subtitle {
-  opacity: 0;
-
-  .active & {
-    animation: fadeIn var(--duration-long) var(--delay-medium) both;
-  }
-}
-
-.decorate-box__item {
-  transform-origin: bottom left;
-  transition: transform var(--duration-long);
-  transition-delay: var(--delay-medium);
-  will-change: transform;
-
-  &--fill {
-    transform: translateX(200%) rotate(0);
-  }
-
-  &--bg {
-    transform: translateX(100%) rotate(0);
-  }
-
-  .active & {
-    transform: translateX(0) rotate(-45deg);
-  }
-}
-
-.benefits__list .page-card {
-  opacity: 0;
-  transform: translate(0, 50px);
-  will-change: transform;
-
-  .active & {
-    animation: fadeInBottom var(--duration-medium) both;
-
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        animation-delay: (0.4s + (0.1s * $i));
-      }
-    }
-  }
-}
-
-.price__list {
-  opacity: 0;
-
-  .active & {
-    animation: fadeIn var(--duration-medium) var(--delay-short) both;
-  }
-}
-
-.tabs {
-  opacity: 0;
-
-  .active & {
-    animation: fadeIn var(--duration-medium) var(--delay-medium) both;
-  }
-}
-
-.request__form,
-.contact__form {
-  opacity: 0;
-
-  .active & {
-    animation: fadeIn var(--duration-medium) both;
-  }
-}
-
-.info__list .page-card {
-  opacity: 0;
-  transform: translate(0, 50px);
-  will-change: transform;
-
-  .active & {
-    animation: fadeInBottom var(--duration-medium) both;
-
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        animation-delay: (0.4s + (0.1s * $i));
-      }
-    }
-  }
-}

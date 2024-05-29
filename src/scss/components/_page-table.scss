@@ -36,18 +36,6 @@
       width: 10%;
     }
 
-    &:nth-child(2) {
-      width: 40%;
-    }
-
-    &:nth-child(3) {
-      min-width: 20%;
-    }
-
-    &:nth-child(4) {
-      min-width: 20%;
-    }
-
     @include mobile {
       font-size: 10px;
     }
