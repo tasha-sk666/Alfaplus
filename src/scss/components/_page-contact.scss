@@ -32,10 +32,6 @@
     opacity: var(--opacity);
   }
 
-  &:focus {
-    outline: none;
-  }
-
   &:focus-visible {
     outline: 3px solid var(--c-almond);
   }

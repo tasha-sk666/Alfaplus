@@ -19,6 +19,7 @@
   &__btn {
     @include flex-all-center;
 
+    overflow: hidden;
     border: 2px solid var(--c-accent);
     border-radius: 100%;
     width: 45px;

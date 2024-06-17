@@ -20,6 +20,10 @@
     .page--android & {
       height: 100svh;
     }
+
+    @include tablet {
+      min-height: 560px;
+    }
   }
 
   &__content {
